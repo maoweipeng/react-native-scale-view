@@ -1,0 +1,25 @@
+{
+  "name": "react-native-scale-view",
+  "version": "1.0.0",
+  "description": "根据 px 像素单位设计图等比缩放 react-native 页面",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react native scale view",
+    "react",
+    "native",
+    "scale",
+    "view",
+    "等比缩放",
+    "不同设备分辨率适配",
+    "设计稿尺寸单位 px 适配"
+  ],
+  "author": "maoweipeng",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:maoweipeng/react-native-scale-view.git"
+  },
+  "license": "MIT"
+}
