@@ -25,7 +25,7 @@ const App = () => {
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScaleView designWidth={375}>
+        <ScaleView designWidth={750}>
           {/* page */}
         </ScaleView>
       </SafeAreaView>
@@ -33,7 +33,7 @@ const App = () => {
   );
 };
 ```
-
+## Props
 | Props       | Description | Type   | Default |
 | ----------- | ----------- | ------ | ------- |
 | designWidth | 设计稿宽    | number | 750     |
