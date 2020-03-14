@@ -1,26 +1,32 @@
 import React from 'react';
 import {View, PixelRatio} from 'react-native';
+import PropTypes from 'prop-types';
 
-const DESIGN_WIDTH = 750;
-const DESIGN_HEIGHT = 1334;
 const dpTopx = dp => PixelRatio.getPixelSizeForLayoutSize(dp);
 
 class Index extends React.PureComponent {
-  state = {
-    /** 屏幕宽 px */
-    screenWidth: 0,
-    /** 屏幕高 px */
-    screenHeight: 0,
+  static propTypes = {
     /** 设计稿宽 */
-    designWidth: DESIGN_WIDTH,
-    /** 设计稿高 */
-    designHeight: DESIGN_HEIGHT,
-    /** 缩放比例 */
-    scale: 1,
+    designWidth: PropTypes.number,
+  };
+
+  static defaultProps = {
+    designWidth: 750,
   };
 
   constructor(props) {
     super(props);
+
+    this.state = {
+      /** 屏幕宽 px */
+      screenWidth: 0,
+      /** 屏幕高 px */
+      screenHeight: 0,
+      /** 设计稿宽 */
+      designWidth: props.designWidth,
+      /** 缩放比例 */
+      scale: 1,
+    };
   }
 
   handleLayout = e => {
