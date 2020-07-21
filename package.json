@@ -1,6 +1,6 @@
 {
   "name": "react-native-scale-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "根据 px 像素单位设计图等比缩放 react-native 页面",
   "main": "src/index.js",
   "scripts": {
