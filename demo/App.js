@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -6,11 +6,32 @@ import {
   Text,
   StatusBar,
   ScrollView,
+  Platform,
 } from 'react-native';
 
 import ScaleView from 'react-native-scale-view';
+import RNOrientation from 'react-native-orientation';
 
 const App = () => {
+  const handlePress = useCallback(() => {
+    RNOrientation.getOrientation((err, orientation) => {
+      if (err) {
+        return;
+      }
+
+      if (orientation !== 'PORTRAIT') {
+        RNOrientation.lockToPortrait();
+        return;
+      }
+
+      if (Platform.OS === 'ios') {
+        RNOrientation.lockToLandscapeRight();
+      } else {
+        RNOrientation.lockToLandscapeLeft();
+      }
+    });
+  }, []);
+
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -18,7 +39,9 @@ const App = () => {
         <ScaleView designWidth={750}>
           <ScrollView>
             <View style={styles.rect}>
-              <Text style={styles.text}>Hello World</Text>
+              <Text style={styles.text} onPress={handlePress}>
+                点击旋转屏幕
+              </Text>
             </View>
             <View style={styles.circle}>
               <View style={styles.circleSmall} />
